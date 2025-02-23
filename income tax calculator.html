@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Tax Calculator Pakistan 2025</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .calculator {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+    .footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h1>Income Tax Calculator Pakistan 2025</h1>
+    <p>Calculate your income tax easily based on the latest tax slabs.</p>
+    
+    <div class="input-group">
+      <label for="income">Enter Annual Income (PKR):</label>
+      <input type="number" id="income" placeholder="e.g., 1500000">
+    </div>
+
+    <button onclick="calculateTax()">Calculate Tax</button>
+
+    <div class="result">
+      <h2>Your Income Tax:</h2>
+      <p id="taxResult">PKR 0.00</p>
+    </div>
+
+    <div class="footer">
+      <p>For more financial tools, visit <a href="https://taxcalculation.pk/income-tax-calculator-pakistan/" target="_blank">Your Website Name</a>.</p>
+    </div>
+  </div>
+
+  <script>
+    function calculateTax() {
+      const income = parseFloat(document.getElementById('income').value);
+
+      let tax = 0;
+      if (income <= 600000) {
+        tax = 0;
+      } else if (income <= 1200000) {
+        tax = (income - 600000) * 0.05;
+      } else if (income <= 2200000) {
+        tax = 30000 + (income - 1200000) * 0.15;
+      } else if (income <= 3200000) {
+        tax = 180000 + (income - 2200000) * 0.25;
+      } else if (income <= 4100000) {
+        tax = 430000 + (income - 3200000) * 0.30;
+      } else {
+        tax = 700000 + (income - 4100000) * 0.35;
+      }
+
+      document.getElementById('taxResult').innerText = `PKR ${tax.toLocaleString()}`;
+    }
+  </script>
+</body>
+</html>
